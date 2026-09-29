@@ -13,3 +13,8 @@ A small internal training API used for DevOps apprenticeship work.
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements-dev.txt
+## Stopping the Server 
+
+To stop the running HTTP server, navigate to your active terminal window and press:
+
+`Ctrl + C` (or `Cmd + C` on macOS)

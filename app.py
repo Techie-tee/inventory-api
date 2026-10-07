@@ -15,8 +15,7 @@ def get_inventory():
 
 def get_health_status():
     """Return the health status of the service."""
-    return {"status": "healthy"}
-
+    return {"status": "unhealthy"}
 
 class InventoryHandler(BaseHTTPRequestHandler):
     def do_GET(self):

@@ -13,8 +13,21 @@ def get_inventory():
     return INVENTORY
 
 
+def get_health_status():
+    """Return the health status of the service."""
+    return {"status": "unhealthy"}
+
+
 class InventoryHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        if self.path == "/health":
+            response_body = json.dumps(get_health_status()).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(response_body)
+            return
+
         if self.path != "/inventory":
             self.send_response(404)
             self.end_headers()

@@ -17,7 +17,6 @@ def get_health_status():
     """Return the health status of the service."""
     return {"status": "unhealthy"}
 
-
 class InventoryHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/health":

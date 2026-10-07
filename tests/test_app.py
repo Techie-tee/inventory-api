@@ -1,4 +1,11 @@
 from app import get_inventory
+from app import get_health_status
+
+
+def test_health_status_is_healthy():
+    status = get_health_status()
+
+    assert status == {"status": "healthy"}
 
 
 def test_inventory_has_items():
